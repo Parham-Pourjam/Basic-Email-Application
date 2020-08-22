@@ -17,11 +17,9 @@ public class Email {
 	public Email(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		//System.out.println("EMAIL CREATED: " + this.firstName + " " + this.lastName );
 		
 		//Call a method asking for the department => return the department
 		this.department = setDepartment();
-		//System.out.println("Department: " + this.department);
 		
 		//Call a method that returns a random password
 		this.password = randomPassword(defaultPasswordLength);
@@ -29,7 +27,6 @@ public class Email {
 		
 		//Combine elements to generate Email
 		email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + companySuffix ;
-		//System.out.println("Your email is: " + email);
 	}
 	
 	//Ask for the department
@@ -50,8 +47,6 @@ public class Email {
 		for (int i=0; i<length; i++) {
 			int rand = (int) (Math.random() * passwordSet.length());
 			password[i] = passwordSet.charAt(rand);
-			//System.out.println(rand);
-			//System.out.println(passwordSet.charAt(rand));
 		}
 		return new String(password);
 	}
